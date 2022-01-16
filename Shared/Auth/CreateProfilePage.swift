@@ -63,28 +63,34 @@ struct SetProfilePage: View {
     }
     
     func verifyUserName() async {
-        self.isLoading = true
-        self.focusState = nil
-        let formattedUserName = removeAtUserName(userName: userName)
-        
-        let request = composeReqCore(path: "/userNameCheck", method: "GET", params: ["userName": formattedUserName], cachePolicy: .reloadIgnoringLocalCacheData)
-        
-        do {
-            let (data, _) = try await URLSession.shared.data(for: request)
-            if let decodedResponse = try? JSONDecoder().decode(ExistenceResponse.self, from: data) {
-                self.isLoading = !decodedResponse.exists
-                if !decodedResponse.exists {
-                    uploadImage()
-                    self.showUserNameError = false
-                    await createUserProfile(userName: formattedUserName)
-                } else {
-                    self.showUserNameError = true
-                }
-            }
+        if DemoTracker.checkEnterDemoMode(firstName: self.firstName, lastName: self.lastName, userName: self.userName) {
+            DemoTracker.instance.isDemoMode = true
+            firebaseAuthManager.auraProfileCreated()
+        } else {
+            self.isLoading = true
+            self.focusState = nil
+            let formattedUserName = removeAtUserName(userName: userName)
             
-        } catch {
-            print("Post Request Invalid data")
-        
+            let request = composeReqCore(path: "/userNameCheck", method: "GET", params: ["userName": formattedUserName], cachePolicy: .reloadIgnoringLocalCacheData)
+            
+            do {
+                let (data, _) = try await URLSession.shared.data(for: request)
+                if let decodedResponse = try? JSONDecoder().decode(ExistenceResponse.self, from: data) {
+                    self.isLoading = !decodedResponse.exists
+                    if !decodedResponse.exists {
+                        uploadImage()
+                        self.showUserNameError = false
+                        await createUserProfile(userName: formattedUserName)
+                    } else {
+                        self.showUserNameError = true
+                    }
+                }
+                
+            } catch {
+                print("Post Request Invalid data")
+            
+            }
+
         }
     }
     
