@@ -73,7 +73,7 @@ class FirebaseAuthManager: ObservableObject {
         let formattedNumber = formatPhoneNumber(self.phoneNumber)
         print(formattedNumber)
 
-//         AUTH.settings?.isAppVerificationDisabledForTesting = true // remove in production?
+         AUTH.settings?.isAppVerificationDisabledForTesting = true // remove in production?
         PhoneAuthProvider.provider().verifyPhoneNumber(formattedNumber, uiDelegate: nil) { verificationID, error in
             if let error = error {
                 self.errorMessage = firebaseErrorParser(error: error)

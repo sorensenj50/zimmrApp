@@ -41,8 +41,9 @@ struct DetailedEventView: View {
         let newNumberMessages = chatViewModel.getNumberMessages() + 1
         tracker.message_insert(key: data.eventID, num: newNumberMessages)
         
-        await updateMessageNumber(data.eventID, newNumberMessages)
+       
         await chatViewModel.sendMessage(messageBody: text)
+        await updateMessageNumber(data.eventID, newNumberMessages)
     }
     
     func updateWrapper(num: Int) async {
