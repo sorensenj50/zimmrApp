@@ -64,7 +64,6 @@ struct SetProfilePage: View {
     
     func verifyUserName() async {
         if DemoTracker.checkEnterDemoMode(firstName: self.firstName, lastName: self.lastName, userName: self.userName) {
-            DemoTracker.instance.isDemoMode = true
             firebaseAuthManager.auraProfileCreated()
         } else {
             self.isLoading = true

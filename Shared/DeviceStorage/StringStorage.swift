@@ -23,7 +23,9 @@ class DemoTracker {
     static let demoCode = "DEMO_CODE_123_123"
     
     static func checkEnterDemoMode(firstName: String, lastName: String, userName: String) -> Bool {
-        return firstName == "DEMO_FIRST" && lastName == "DEMO_LAST" && userName == "@DEMO_USER"
+        let shouldGoIntoDemoMode = firstName == "DEMO_FIRST" && lastName == "DEMO_LAST" && userName == "@DEMO_USER"
+        self.instance.isDemoMode = shouldGoIntoDemoMode
+        return shouldGoIntoDemoMode
     }
     
     static func getDemoStringFromService(service: KeychainHelper.Services) -> String {
