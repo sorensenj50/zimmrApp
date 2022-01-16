@@ -157,7 +157,10 @@ class FirebaseAuthManager: ObservableObject {
     
     func auraProfileCreated() {
         print("Called")
-        self.needsSetUp = false
+        DispatchQueue.main.async {
+            self.needsSetUp = false
+        }
+        
         UserDefaults.standard.set("false", forKey: "needsSetUp")
     }
     
