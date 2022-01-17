@@ -90,7 +90,6 @@ struct SetProfilePage: View {
     }
         
             
-    }
     
     static func remove_at_sign(text: inout String) -> String {
         if text.first == "@" {

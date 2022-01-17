@@ -140,7 +140,7 @@ class FirebaseAuthManager: ObservableObject {
                 DispatchQueue.main.async {
                     self.isLoading = false
                     self.isSignedInPub = true
-                    if decodedResponse.exists && !DemoTracker.instance.isDemoMode {
+                    if decodedResponse.exists {
                         self.needsSetUp = false
                         UserDefaults.standard.set("false", forKey: "needsSetUp")
                     } else {
