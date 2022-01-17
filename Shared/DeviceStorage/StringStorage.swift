@@ -13,32 +13,7 @@ import Foundation
 import Firebase
 
 
-class DemoTracker {
 
-    static let instance = DemoTracker()
-    private init() {}
-
-    var isDemoMode: Bool = false
-    
-    static let demoCode = "DEMO_CODE_123_123"
-    
-    static func checkEnterDemoMode(firstName: String, lastName: String, userName: String) -> Bool {
-        let shouldGoIntoDemoMode = firstName == "DEMO_FIRST" && lastName == "DEMO_LAST" && userName == "@DEMO_USER"
-        self.instance.isDemoMode = shouldGoIntoDemoMode
-        return shouldGoIntoDemoMode
-    }
-    
-    static func getDemoStringFromService(service: KeychainHelper.Services) -> String {
-        switch service {
-        case .firstName:
-            return "Kennedy"
-        case .phoneNumber:
-            return "+16505551280"
-        case .userID:
-            return "gX7of1dtKHQwvfP8pFNIP8GuLBy1"
-        }
-    }
-}
 
 
 class StringStorage {
@@ -59,7 +34,7 @@ class StringStorage {
             self.string = string
         }
         
-        return interceptReturn()
+        return self.string
     }
     
     func ensureExists(string: String) {
@@ -94,13 +69,7 @@ class StringStorage {
         }
     }
     
-    func interceptReturn() -> String?  {
-        if DemoTracker.instance.isDemoMode {
-            return DemoTracker.getDemoStringFromService(service: self.service)
-        } else {
-            return self.string
-        }
-    }
+
 }
 
 
@@ -124,7 +93,7 @@ class USER_ID: StringStorage {
             self.string = userID
         }
         
-        return interceptReturn()
+        return self.string
     }
 }
 
