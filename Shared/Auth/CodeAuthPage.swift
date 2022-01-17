@@ -61,8 +61,8 @@ struct EnterCode: View {
                         firebaseAuthManager.sendMessage()
                     } label: {
                         VStack {
-                            PhoneAuthSubtitleText(text: "Didn't receive the code?")
-                            PhoneAuthSubtitleText(text: "Tap here and we'll send another one")
+                            EmptySubtitle(text: "Didn't receive the code?")
+                            EmptySubtitle(text: "Tap here and we'll send another one")
                         }
                     }
                     

@@ -169,14 +169,7 @@ struct PhoneAuthTitleText: View {
     }
 }
 
-struct PhoneAuthSubtitleText: View {
-    let text: String
-    var body: some View {
-        Text(text)
-            .font(.system(size: 16, weight: .light))
-            .foregroundColor(.gray)
-    }
-}
+
 
 
 

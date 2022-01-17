@@ -28,5 +28,5 @@ struct HexagonConstant {
 }
 
 struct VERSION {
-    static let num = "v0.0"
+    static let num = "v1.0"
 }

@@ -63,7 +63,7 @@ struct EnterPhone: View {
                 Spacer()
                 
                 PhoneAuthTitleText(text: "Enter Phone Number")
-                PhoneAuthSubtitleText(text: "Enter your phone number and we'll send you a temporary code")
+                EmptySubtitle(text: "Enter your phone number and we'll send you a temporary code")
                     .padding(.bottom, 15)
                 
                 DisplayPhoneNumber(phoneNumber: $firebaseAuthManager.phoneNumber, formattingFunc: getFormattedText)
