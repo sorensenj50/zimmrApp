@@ -15,7 +15,7 @@ struct LandingPage: View {
                 VStack {
 
                     Logo()
-                        .frame(width: geo.size.width - 120, height: geo.size.width - 120)
+                        .frame(width: geo.size.width - 130, height: geo.size.width - 130)
                         .padding(.top, 20)
             
                     TitleString(text: "Welcome to Zimmr!", size: 25)
