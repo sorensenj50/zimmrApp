@@ -17,13 +17,17 @@ extension URLComponents {
 func composeReqCore(path: String, method: String, params: [String: String], body: [String: Any]? = nil, cachePolicy: URLRequest.CachePolicy) -> URLRequest {
     var components = URLComponents()
     
+    if RuntimeConfig.host == .local {
+        components.scheme = "http"
+        components.host = "localhost"
+        components.port = 8080
+    } else {
+        components.scheme = "https"
+        components.host = "elite-emitter-337602.wn.r.appspot.com"
+        
+    }
     
-//    components.scheme = "http"
-//    components.host = "localhost"
-//    components.port = 8080
-//    
-    components.scheme = "https"
-    components.host = "elite-emitter-337602.wn.r.appspot.com"
+    
         
     components.path = path
     components.setQueryItems(with: params)
