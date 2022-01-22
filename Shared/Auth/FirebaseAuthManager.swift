@@ -121,7 +121,7 @@ class FirebaseAuthManager: ObservableObject {
         }
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             print("Checking")
             if let userID = USER_ID.instance.get() {
                 if self.errorMessage == nil {

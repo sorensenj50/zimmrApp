@@ -35,6 +35,7 @@ struct MyApp: App {
     }
 }
 
+
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ : UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
