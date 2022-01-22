@@ -12,7 +12,7 @@ import UIKit
 import FirebaseAuth
 
 struct RuntimeConfig {
-    static let host: BackendHost = .cloud
+    static let host: BackendHost = .local
     
     enum BackendHost {
         case cloud

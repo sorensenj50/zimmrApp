@@ -303,27 +303,4 @@ struct TextDivider_Old: View {
     }
 }
 
-//struct EventOptions: View {
-//    @Binding var inviteMore: Bool
-//    @Binding var changeEventTime: Bool
-//    var body: some View {
-//
-//        Menu {
-//            Button {
-//                isActiveOne = true
-//            } label: {
-//                Text("Invite More People")
-//            }
-//
-//            Button {
-//                isActiveTwo = true
-//            } label: {
-//                Text("Change Event Time")
-//            }
-//
-//        } label: {
-//            Image(systemName: "ellipsis")
-//        }
-//    }
-//}
 
