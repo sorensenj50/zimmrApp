@@ -147,7 +147,7 @@ struct UserListCore: View {
 
 "Core" is helpful as an identifier here because the `UserListCore` is wrapped in other view layers that instantiate the view model that fetches the relevant data and handles the logic of only showing the loading view when necessary.
 
-### Data Model
+#### Data Model
 
 `UserCore`, similarly, is a `Codable` `struct` that is contains essential user information but can also be wrapped in other `Codable` `struct`s (like `Event`) for modularity. UserCore is defined here:
 
@@ -227,13 +227,7 @@ struct UserList: Codable, ModelEntryPoint {
         return Set(users.filter({ $0.hasImage }).map({ $0.userID }))
     }
     
-    static func getParams(otherID: String, type: String) -> [String: String] {
-        return ["userID": USER_ID.instance.get()!, "otherID": otherID, "type": type]
-    }
-    
-    static func getMutualFriendParams(otherID: String, name: String) -> [String: String] {
-        return ["userID": USER_ID.instance.get()!, "type": "mutualFriends", "otherID": otherID, "otherName": name]
-    }
+    // ...
 }
 ```
 
@@ -247,7 +241,7 @@ The nested `FunctionHolder` `struct` exists to provide a container for the funct
 
 There are other data model `Codable` `struct`s, but for the sake of brevity, we must continue to other topics.
 
-### View Model
+#### View Model
 
 The view models in my project serve to fetch and decode the data that my views display. Though that are severl different types of view model used in Zimmr, they all are derived from the `View Model` super class. I won't include the entire class definition here, but here is abbreviation of it:
 
@@ -342,9 +336,9 @@ Because the object of an `ImageFetcher` doesn't need to be interacted with, `Ima
 let _ = ImageFetcher(references: decodedResponse.getReferences(), function: self.update, result: decodedResponse)
 ```
 
-### Singletons
+#### Singletons
 
-For stateful processes that aren't publishing changes directly to `View`s the singleton design pattern is quite useful, though certainly easy to abuse. It's power (and potential to be abused) comes from the fact that is essentially a global variable. 
+For stateful processes that aren't publishing changes directly to `View`s the singleton design pattern is quite useful, though certainly easy to abuse. It's power (and potential to be abused) comes from the fact that it is essentially a global variable. 
 
 A good example of a singleton is the image `Cache` itself, defined here:
 
