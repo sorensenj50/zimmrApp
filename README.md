@@ -9,6 +9,11 @@
 
 Zimmr is a social media app I built with Swift, Node.js, Neo4j, and Firebase. This repo in particular holds the code for the Swift frontend of the app. Another repo in my profile contains the javascript code for my Node.js server.
 
+### Purpose of Repo
+
+Though this repo is public, I am not seeking contributors to improve Zimmr. Instead, I intend this repo to display the work I've put into Zimmr so that employers or other interested parties can get a sense of my abilities. In the rest of this `README`, I'll give a summary of the code and my thought process behind it. You can also install my app via TestFlight to see what it does for yourself. 
+
+Link: https://testflight.apple.com/join/pvHUsutx
 
 ### Premise
 
@@ -24,9 +29,7 @@ Like Facebook and other social media apps, Zimmr has a friend request feature so
 
 I decided to turn Zimmr into a programming project because I realized (after building it) that the vision and many of the supposedly unique features of Zimmr were already captured by another startup--[IRL](https://www.irl.com/). Because they already have an established user base and a more mature app, I decided that trying to directly compete with IRL was not worth it.
 
-### Purpose of Repo
 
-Though this repo is public, I am not seeking contributors to improve Zimmr. Instead, I intend this repo to display the work I've put into Zimmr so that employers or other interested parties can get a sense of my abilities. In the rest of this `README`, I'll give a summary of the code and my thought process behind it. You can also install my app via TestFlight to see what it does for yourself. Link: https://testflight.apple.com/join/pvHUsutx
 
 ### Design
 
