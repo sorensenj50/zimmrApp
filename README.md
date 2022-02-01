@@ -26,7 +26,7 @@ I decided to turn Zimmr into a programming project because I realized (after bui
 
 ### Purpose of Repo
 
-Though this repo is public, I am not seeking contributors to improve Zimmr. Instead, I intend this repo to display the work I've put into Zimmr so that employers or other interested parties can get a sense of my abilities. In the rest of this `README`, I'll give a summary of the code and my thought process behind it.
+Though this repo is public, I am not seeking contributors to improve Zimmr. Instead, I intend this repo to display the work I've put into Zimmr so that employers or other interested parties can get a sense of my abilities. In the rest of this `README`, I'll give a summary of the code and my thought process behind it. You can also install my app via TestFlight to see what it does for yourself. Link: https://testflight.apple.com/join/pvHUsutx
 
 ### Design
 
@@ -345,7 +345,7 @@ For stateful processes that aren't publishing changes directly to `View`s the si
 
 A good example of a singleton is the image `Cache` itself, defined here:
 
-```
+```swift
 class Cache: NSDiscardableContent {
     static let instance = Cache()
     private init() { }
