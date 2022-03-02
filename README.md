@@ -13,7 +13,6 @@ Zimmr is a social media app I built with Swift, Node.js, Neo4j, and Firebase. Th
 
 Though this repo is public, I am not seeking contributors to improve Zimmr. Instead, I intend this repo to display the work I've put into Zimmr so that employers or other interested parties can get a sense of my abilities. In the rest of this `README`, I'll give a summary of the code and my thought process behind it. You can also install my app via TestFlight to see what it does for yourself. 
 
-Link: https://testflight.apple.com/join/pvHUsutx
 
 ### Premise
 
